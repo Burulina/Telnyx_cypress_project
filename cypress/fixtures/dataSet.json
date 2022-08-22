@@ -1,0 +1,13 @@
+{
+  "valid": {
+    "email": "work@gmail.com",
+    "name": "Volodymyr",
+    "lastname": "Prihodko",
+    "password": "uuiyo124eeretertretrterFF@",
+    "company": "Imp"
+  },
+  "invalid": {
+    "email": "work"
+  },
+  "search": "github"
+}
