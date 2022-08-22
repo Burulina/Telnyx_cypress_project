@@ -7,4 +7,4 @@
 - click on ***"telnyx.cy.js"*** in opened window with specs and wait for auto test execution;
 3. To run auto tests manually on local machine with command line make such steps:
 - type ***"npm run cy:run"*** and prees ***enter***, wait for auto test execution.
-4. Project included .yml file, which run auto tests from redmine project in GitHub actions after every push on main branch of repository.
+4. Project included .yml file, which run auto tests from telnyx project in GitHub actions after every push on main branch of repository.
