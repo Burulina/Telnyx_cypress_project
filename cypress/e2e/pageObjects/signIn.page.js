@@ -1,4 +1,4 @@
-import { CommonMethods } from "./common.methods";
+const commonMethods = require ('./common.methods');
 
 // Selectors
 const continueButton = '[class*="SSOForm__LoginButton"]';
@@ -12,49 +12,45 @@ const companyNameEmailLink = '[class*="SSOForm__ButtonLink"]';
 const loginErrorMessage = 'span[class*="Message__MessageCopy"]';
 const signInTitle = '[data-testid="login.signin.title"]';
 
-export class SignInPage extends CommonMethods {
-
-    constructor() {
-        super();
-    }
+class SignInPage {
     
+    getSignInTitle () {
+        return cy.get(signInTitle);
+    }
+
+    getLoginErrorMessage () {
+        return cy.get(loginErrorMessage);
+    }
+
     fillLoginInput (email, password) {
-        super.typeInput(businessEmailInput, email);
-        super.typeInput(passwordInput, password);
+        commonMethods.typeInput(businessEmailInput, email);
+        commonMethods.typeInput(passwordInput, password);
     }
     
     fillBusinessNameInput(name) {
-        super.typeInput(businessNameInput, name);
+        commonMethods.typeInput(businessNameInput, name);
     }
 
     fillCompanyEmailInput (email) {
-        super.typeInput(companyEmailInput, email);
-    }
-
-    checkSignInTitle (text){
-        super.checkVisibilityContainText(signInTitle, text);
-    }
-
-    checkLoginErrorMessage (text){
-        super.checkVisibilityContainText(loginErrorMessage, text);
+        commonMethods.typeInput(companyEmailInput, email);
     }
 
     clickLoginButton() {
-        super.clickElem(loginButton);
+        commonMethods.clickElem(loginButton);
     }
 
     clickSingleSignOnButton() {
-        super.clickElem(singleSignOnButton);
+        commonMethods.clickElem(singleSignOnButton);
     }
 
     clickContinueButton() {
-        super.clickElem(continueButton);
+        commonMethods.clickElem(continueButton);
     }
 
     clickCompanyNameEmailLink() {
-        super.clickElem(companyNameEmailLink);
+        commonMethods.clickElem(companyNameEmailLink);
     }
 
 }
 
-export const signInPage = new SignInPage();
+module.exports = new SignInPage();

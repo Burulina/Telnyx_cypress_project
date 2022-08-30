@@ -1,9 +1,29 @@
-## This is telnyx.com test project ver. 1.0
-1. Documentation for project (test cases) is located in the root directory in the "Docs" folder;
-2. To run auto tests manually on local machine with Cypress test runner make such steps:
-- type ***"npm run cypress:open"*** in termainal and press ***enter***;
-- choose ***"E2E testing"*** and after ***"Chrome"***;
+## Description 
+This is cypress project for testing telnyx.com (ver 2.0 - after code review).
+
+Documentation for project (test cases) is located in the root directory in the "Docs" folder.
+## Setup
+1. Before using cypress you need to download and install:
+- [last version of VS Code](https://code.visualstudio.com/) or any other IDE (for your choice);
+- [at least Node.js 14](https://nodejs.org/uk/download/).
+2. Clone git repository:
+``` console
+git clone https://github.com/Burulina/Telnyx_cypress_project
+```
+- and install node modules:
+``` console
+npm install
+```
+## Steps to run
+1. To run auto tests manually on local machine with Cypress test runner:
+``` console
+npm run cy_open
+```
+- choose ***"E2E testing"*** and after ***"Chrome"*** in opened window;
 - click ***"Start E2E testing in Chrome"***;
-- click on ***"telnyx.cy.js"*** in opened window with specs and wait for auto test execution;
-3. To run auto tests manually on local machine with command line make such steps:
-- type ***"npm run cy:run"*** and prees ***enter***, wait for auto test execution.
+- click on ***"*.cy.js"*** file in opened window.
+
+2. To run all auto tests manually on local machine with command line:
+``` console
+npm run cy_run
+```

@@ -1,4 +1,4 @@
-import { CommonMethods } from "./common.methods";
+const commonMethods = require ('./common.methods');
 
 // Selectors
 const searchInput = '.search__input';
@@ -6,26 +6,25 @@ const supportCenterHeading = 'h1.header__headline';
 const searchResultHeading = '.search__headline';
 const searchMainTopics = 'h2.c__primary';
 
-export class SupportCenterPage extends CommonMethods {
+class SupportCenterPage {
 
-    constructor() {
-        super();
+    getSearchMainTopics () {
+        return cy.get(searchMainTopics);
+    }
+    
+    getSupportCenterHeading () {
+        return cy.get(supportCenterHeading);
     }
 
-    checkSupportCenterHeading (text){
-        super.checkVisibilityContainText(supportCenterHeading, text);
-    }
-
-    checkSearchResult (text) {
-        super.checkVisibilityContainText(searchResultHeading, text);
+    getSearchResultHeading () {
+        return cy.get(searchResultHeading);
     }
 
     fillSearchInput (text) {
-        super.typeInput(searchInput, text);
+        commonMethods.typeInput(searchInput, text);
     }
 
-    checkSearchMainTopics() {
-        cy.get(`${searchMainTopics}:visible`).should('have.length',15);
+    consoleLogSearchMainTopics() {
         cy.get(searchMainTopics).each(($el, index, $list) => {
         const text=$el.text();
         cy.log(text);
@@ -34,4 +33,4 @@ export class SupportCenterPage extends CommonMethods {
 
 }
 
-export const supportCenterPage = new SupportCenterPage();
+module.exports = new SupportCenterPage();

@@ -1,12 +1,7 @@
 // Selectors
 const closeCookiesButton = '[aria-label="close and deny"]';
-const baseUrl = 'https://telnyx.com/';
 
-export class CommonMethods {
-
-    constructor () {
-
-    }
+class CommonMethods {
 
     closeCookiesForm () {
         cy.get("body").then(($body) => {
@@ -33,20 +28,8 @@ export class CommonMethods {
         cy.get(elem).type(text);
     }
 
-    checkVisibilityContainText (elem, text){
-        cy.get(elem).should('be.visible').and('contain.text', text);
-    }
-
-    checkUrlInclude (urlValue){
-        cy.url().should('include', urlValue);
-    }
-
-    checkBaseUrl (){
-        cy.url().should('eq', baseUrl);
-    }
-
 }
 
-export const commonMethods = new CommonMethods();
+module.exports = new CommonMethods();
 
 

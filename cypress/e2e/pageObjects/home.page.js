@@ -1,4 +1,4 @@
-import { CommonMethods } from "./common.methods";
+const commonMethods = require ('./common.methods');
 
 // Selectors
 const homePageButton = '#Logo-Dark_svg__Layer_1';
@@ -14,61 +14,56 @@ const supportCenterLink = 'audio + a[href*="/support.telnyx.com"]';
 const wirelessPricingLink =  'footer a[href="/pricing/wireless-pricing"]';
 const networkMenuItem = 'header span [href="/solutions/global-ip-network"]';
 
-export class HomePage extends CommonMethods {
-
-    constructor() {
-        super();
-    };
+class HomePage {
 
     fillEmailInput(text) {
-        super.typeInput(emailInput, text);
+        commonMethods.typeInput(emailInput, text);
     }
 
     clickHomePageButton() {
-        super.clickElem(homePageButton);
+        commonMethods.clickElem(homePageButton);
     }
     
     clickLogInButton() {
-        super.clickDoubleElem(loginButton, 0);
+        commonMethods.clickDoubleElem(loginButton, 0);
     }
 
     clickSingUpButton() {
-        super.clickDoubleElem(singUpButton, 1);
+        commonMethods.clickDoubleElem(singUpButton, 1);
     }
 
     clickTalkExpertButton() {
-        super.clickElem(talkExpertButton);
+        commonMethods.clickElem(talkExpertButton);
     }
     
     clickTryForFreeButton() {
-        super.clickElem(tryForFreeButton);
+        commonMethods.clickElem(tryForFreeButton);
     }
 
     clickJoinWaitlistLink() {
-        super.clickElem(joinWaitlistLink);
+        commonMethods.clickElem(joinWaitlistLink);
     }
 
     clickLoginLink() {
-        super.clickElemNewTab(loginLink);
+        commonMethods.clickElemNewTab(loginLink);
     }
 
     clickSignUpLink() {
-        super.clickElem(signUpLink);
+        commonMethods.clickElem(signUpLink);
     }
 
     clickSupportCenterLink() {
-        super.clickElem(supportCenterLink);
+        commonMethods.clickElem(supportCenterLink);
     }
 
     clickWirelessPricingLink() {
-        super.clickElem(wirelessPricingLink);
+        commonMethods.clickElem(wirelessPricingLink);
     }
 
     clickNetworkMenuItem() {
-        super.clickElem(networkMenuItem);
+        commonMethods.clickElem(networkMenuItem);
     }
-
 
 }
 
-export const homePage = new HomePage();
+module.exports = new HomePage();

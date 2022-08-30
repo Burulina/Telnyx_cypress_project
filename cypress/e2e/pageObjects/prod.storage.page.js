@@ -1,4 +1,4 @@
-import { CommonMethods } from "./common.methods";
+const commonMethods = require ('./common.methods');
 
 // Selectors
 const joinWaitlistButton = 'h1 ~div>div>a[href="#form"]';
@@ -9,32 +9,27 @@ const firstNameInput = '#FirstName';
 const lastNameInput = '#LastName';
 const businessEmailInput = '#Email';
 
-export class ProdStoragePage extends CommonMethods {
-
-    constructor() {
-        super();
-    }
-
+class ProdStoragePage {
 
     fillJoinWaitlistForm (firstname, lastname, email, text) {
-        super.typeInput(firstNameInput, firstname);
-        super.typeInput(lastNameInput, lastname);
-        super.typeInput(businessEmailInput, email);
-        super.typeInput(addInfoTextForm, text);
+        commonMethods.typeInput(firstNameInput, firstname);
+        commonMethods.typeInput(lastNameInput, lastname);
+        commonMethods.typeInput(businessEmailInput, email);
+        commonMethods.typeInput(addInfoTextForm, text);
     }
     
     clickApplyNowButton() {
-        super.clickElem(applyNowButton);
+        commonMethods.clickElem(applyNowButton);
     }
 
     clickJoinWaitlistButton() {
-        super.clickElem(joinWaitlistButton);
+        commonMethods.clickElem(joinWaitlistButton);
     }
 
     clickRecieveEmailCheckBox (){
-        super.clickElem(recieveEmailCheckBox);
+        commonMethods.clickElem(recieveEmailCheckBox);
     }
 
 }
 
-export const prodStoragePage = new ProdStoragePage();
+module.exports = new ProdStoragePage();

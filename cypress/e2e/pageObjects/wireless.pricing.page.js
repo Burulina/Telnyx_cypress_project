@@ -1,28 +1,24 @@
-import { CommonMethods } from "./common.methods";
+const commonMethods = require ('./common.methods');
 
 // Selectors
 const countrySearchInput = 'input[type="search"]';
 const countryListboxButton  = 'button[aria-haspopup="listbox"]';
 const wirelessPricingPageTitle = 'div>h1';
 
-export class WirelessPricingPage extends CommonMethods {
+class WirelessPricingPage {
 
-    constructor() {
-        super();
+    getWirelessPricingPageTitle () {
+        return cy.get(wirelessPricingPageTitle);
     }
 
     clickCountryListboxButton() {
-        super.clickDoubleElem(countryListboxButton, 0);
+        commonMethods.clickDoubleElem(countryListboxButton, 0);
     }
 
     fillCountrySearchInput (text) {
-        super.typeInput(countrySearchInput, text);
-    }
-
-    checkWirelessPricingPageTitle (text) {
-        super.checkVisibilityContainText(wirelessPricingPageTitle, text);
+        commonMethods.typeInput(countrySearchInput, text);
     }
 
 }
 
-export const wirelessPricingPage = new WirelessPricingPage();
+module.exports = new WirelessPricingPage();
